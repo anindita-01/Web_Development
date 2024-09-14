@@ -81,3 +81,22 @@ input {
     color: #6dee0a;
 }
 
+@media (max-width: 480px) {
+    .calculator {
+      padding: 15px;
+      box-shadow: none;  // Remove box shadow for very small screens
+    }
+  
+    input {
+      width: 100%;  //  input takes full width
+      padding: 15px;
+      font-size: 24px;  // Reduce font-size for smaller screens
+    }
+  
+    button {
+      width: 45px;
+      height: 45px;
+      font-size: 16px;
+      margin: 8px;  // Adjust button size and spacing for small screens
+    }
+  }
