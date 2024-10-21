@@ -58,27 +58,27 @@ const handleExtraSpaces = () => {
             onChange={handleOnChange}
             rows="8"
           ></textarea>
-          <button className="btn btn-primary mx-1" onClick={handleUpClick}>
+          <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleUpClick}>
             Convert to uppercase
           </button>
-          <button className="btn btn-primary mx-1" onClick={handleLowClick}>
+          <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>
             Convert to lowercase
           </button>
-          <button className="btn btn-primary mx-1" onClick={handleClearClick}>
+          <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleClearClick}>
             Clear text
           </button>
-          <button className="btn btn-primary mx-1" onClick={handleCapitalize}>
+          <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCapitalize}>
             Capitalize text
           </button>
           <button
-            // disabled={text.length === 0}
+             disabled={text.length === 0}
             className="btn btn-primary mx-2"
             onClick={handleCopy}
           >
             Copy Text
           </button>
           <button
-            // disabled={text.length === 0}
+             disabled={text.length === 0}
             className="btn btn-primary mx-2 "
             onClick={handleExtraSpaces}
           >
@@ -90,7 +90,7 @@ const handleExtraSpaces = () => {
       <div className="container my-3" style={{color: mode==='dark'?'white':'#042743'}}>
         <h2>Your text summary</h2>
         <p>
-          {text.split(" ").length} words, {text.length} characters
+          {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words, {text.length} characters
         </p>
         <p>{0.08 * text.split(" ").length} Minutes to read</p>
         <h2>Preview</h2>
