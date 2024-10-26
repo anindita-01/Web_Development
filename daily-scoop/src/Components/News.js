@@ -34,14 +34,18 @@ export class News extends Component {
   }
 
 async updateNews(){
+  this.props.setProgress(10);
   const url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=e9732a8e4d0f4f0ba3e6ee0011ea234f&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({loading:true});
     let data= await fetch(url);
+    this.props.setProgress(40);
     let parsedData= await data.json()
+    this.props.setProgress(0);
     // console.log(parsedData);
     this.setState({articles: parsedData.articles,
                   totalResults: parsedData.totalResults,
                   loading: false  })
+                  this.props.setProgress(100);
 }
 
   async componentDidMount(){
@@ -68,7 +72,7 @@ async updateNews(){
     
     return (
       <div className='container my-3'>
-        <h1 className="text-center" style={{margin: '35px 0px'}}>Daily-Scoop - Top {this.capitalize(this.props.category)} Headlines </h1>
+        <h1 className="text-center" style={{margin: '90px 0px'}}>Daily-Scoop - Top {this.capitalize(this.props.category)} Headlines </h1>
 
 
         {/* if loading is true spinner will show */}
