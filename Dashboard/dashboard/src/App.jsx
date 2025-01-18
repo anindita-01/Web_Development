@@ -1,10 +1,16 @@
 
-import React from 'react'
 
-export default function App() {
+
+function App() {
+ 
   return (
-    <div>
-      Hiiiii
+    <>
+    <div className="text-3xl font-bold underline">  
+    Hello motherfucker!!!
     </div>
+     
+    </>
   )
 }
+
+export default App
