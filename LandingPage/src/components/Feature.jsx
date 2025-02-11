@@ -25,8 +25,10 @@ const Feature = () => {
                   {feature.icon}
                 </div>
                 <div className="">
-                    <h5 className="mt-1 mb-6 text-xl">{feature.text}</h5>
-                    <p className="text-md p-2 mb-20 text-neutral-500">{feature.description}</p>
+                  <h5 className="mt-1 mb-6 text-xl">{feature.text}</h5>
+                  <p className="text-md p-2 mb-20 text-neutral-500">
+                    {feature.description}
+                  </p>
                 </div>
               </div>
             </div>
