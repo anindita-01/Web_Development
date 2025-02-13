@@ -4,7 +4,7 @@ import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 import { faCheckSquare } from "@fortawesome/free-solid-svg-icons";
 import { Check } from "@mui/icons-material";
 
-const Todo = ({ task, deleteTodo, doneTask }) => {
+const Todo = ({ task, deleteTodo, doneTask, editTodo }) => {
   return (
     <>
       <div className="flex justify-center items-center w-full p-2 m-4">
@@ -15,7 +15,10 @@ const Todo = ({ task, deleteTodo, doneTask }) => {
         >
           <p>{task.task}</p>
           <div className=" flex gap-4">
-            <FontAwesomeIcon icon={faPenToSquare} />
+            <FontAwesomeIcon
+              icon={faPenToSquare}
+              onClick={() => editTodo(task.id)}
+            />
             <FontAwesomeIcon
               icon={faTrash}
               onClick={() => deleteTodo(task.id)}
